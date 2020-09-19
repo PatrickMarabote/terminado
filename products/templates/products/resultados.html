@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+
+<div class="Busqueda">
+	<div class="informacion">
+{% if res %}
+
+	<p id="resultado">Product{{res|pluralize}} encontrado{{res|pluralize}}: {{res|length}}</p>
+		{% for a in res %}
+			<img src="{{a.image.url }}" width="640" height="480">
+			<p>Titulo: {{a.title}} ///// {{a.pub_date}}</p>
+			<p>Descrpicion: {{a.body}}</p>
+		
+		{% endfor %}
+	
+{% else %}
+	</div>
+</div>	
+<br>
+	<p>Ningún libro encontrado </p>
+{% endif %}
+
+{% endblock %}
+
+</div>
